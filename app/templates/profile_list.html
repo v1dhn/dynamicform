@@ -1,0 +1,11 @@
+<h2>Profiles</h2>
+<ul>
+    {% for profile in profiles %}
+        <li>{{ profile.firstname }} {{ profile.lastname }}, Age: {{ profile.age }}</li>
+        <ul>
+            {% for key, value in profile.additional_data.items %}
+                <li>{{ key }}: {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</ul>

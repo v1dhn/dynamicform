@@ -1,0 +1,13 @@
+<h2>Add a Dynamic Field</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Field</button>
+</form>
+
+<h2>Existing Fields</h2>
+<ul>
+    {% for field in fields %}
+        <li>{{ field.name }} - Type: {{ field.get_field_type_display }}{% if field.max_length %} - Max Length: {{ field.max_length }}{% endif %}</li>
+    {% endfor %}
+</ul>
